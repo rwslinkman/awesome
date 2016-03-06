@@ -85,12 +85,23 @@
 
         </LinearLayout>
 
+        <!-- Value explanation -->
+        <TextView
+            android:id="@+id/example_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/example_container"
+            android:text="Value"
+            android:textColor="@color/default_grey"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
         <!-- ButtonAwesome -->
         <nl.rwslinkman.awesome.ButtonAwesome
             android:id="@+id/my_awesome_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/example_container"
+            android:layout_below="@id/example_value"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:text="@string/fa_cloud_upload"
