@@ -24,10 +24,11 @@ public class ExampleActivity extends AppCompatActivity {
 
         // Build icon
         ExampleActivity activity = this;
-        int color = ContextCompat.getColor(activity, android.R.color.holo_red_light);
+        int color = ContextCompat.getColor(activity, R.color.default_grey);
         DrawableAwesome.DrawableAwesomeBuilder builder = new DrawableAwesome.DrawableAwesomeBuilder(activity, R.string.fa_anchor);
         builder.setColor(color);
         builder.setSize(100); // size is in dp
+        // More options available
         DrawableAwesome myDrawable = builder.build();
 
         // Put icon into ImageView

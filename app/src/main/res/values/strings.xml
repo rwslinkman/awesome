@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AwesomeExample</string>
+    <string name="example_title_iv">ImageView</string>
+    <string name="example_title_tv">TextView</string>
 </resources>
