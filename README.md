@@ -1,4 +1,4 @@
-Awesome
+AndroidAwesome
 =======
 
 Use FontAwesome icons in your Android app with Awesome
@@ -14,9 +14,13 @@ Credits go to FontAwesome for their incredible work.
 Integrating with Android Studio
 -------------------------------
 
-The Awesome library comes as a Gradle bundle
+The AndroidAwesome library comes as a Gradle bundle via jcenter.
 
-`Will be published soon`
+```
+dependencies {
+	compile 'nl.rwslinkman.awesome:awesome:1.2'
+}
+```
 
 Story behind this library
 -------------------------
@@ -30,7 +34,7 @@ hoping the original author makes himself known.
 
 How to use
 ----------
-Awesome can be used in XML. You can use a ButtonAwesome or a TextAwesome
+AndroidAwesome can be used in XML. You can use a ButtonAwesome or a TextAwesome
 
 ```
 <nl.rwslinkman.awesome.ButtonAwesome 
@@ -45,20 +49,29 @@ Awesome can be used in XML. You can use a ButtonAwesome or a TextAwesome
 ```
 <nl.rwslinkman.awesome.TextAwesome
 	android:id="@+id/my_awesome_text"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
 	android:text="@string/fa_file_image_o"
+	android:textColor="@android:color/white"
 	android:textSize="20sp" />
 ```
 
 It is also possible to create a DrawableAwesome using the DrawableAwesomeBuilder
 
 ```
-Context c = this;
-DrawableAwesome.DrawableAwesomeBuilder builder = new DrawableAwesome.DrawableAwesomeBuilder(c, R.string.fa_android);
-builder.setColor(android.R.color.holo_green_light);
-builder.setSize(40);
+// Find components in XML
+ImageView drawableView = (ImageView) findViewById(R.id.my_awesome_imageview);
+
+// Build icon
+ExampleActivity activity = this;
+int color = ContextCompat.getColor(activity, android.R.color.holo_red_light);
+DrawableAwesome.DrawableAwesomeBuilder builder = new DrawableAwesome.DrawableAwesomeBuilder(activity, R.string.fa_anchor);
+builder.setColor(color);
+builder.setSize(100); // size is in dp
 DrawableAwesome myDrawable = builder.build();
+
+// Put icon into ImageView
+drawableView.setImageDrawable(myDrawable);
 ```
 
 The icon to be used is set through the String resources. All icons have a `fa-` prefix, as they do on the website.
