@@ -1,5 +1,8 @@
 package nl.rwslinkman.awesomeexample;
 
+import android.content.Intent;
+import android.graphics.Paint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +42,10 @@ public class ExampleActivity extends AppCompatActivity implements View.OnClickLi
         mButtonAwesome = (ButtonAwesome) findViewById(R.id.my_awesome_button);
         mButtonAwesome.setOnClickListener(this);
 
+        TextView githubLink = (TextView) findViewById(R.id.example_github_link);
+        githubLink.setPaintFlags(githubLink.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        githubLink.setOnClickListener(this);
+
         // Gather all example icons
         mExamples = getAllIcons();
 
@@ -73,6 +80,14 @@ public class ExampleActivity extends AppCompatActivity implements View.OnClickLi
             AwesomeExample next = getDifferentExample(mNextExample);
             mButtonAwesome.setText(next.getAwesomeRes());
             mNextExample = next;
+        }
+        else if(v.getId() == R.id.example_github_link)
+        {
+            // Visit project's github
+            String url = "https://github.com/rwslinkman/awesome";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
         }
     }
 
@@ -109,22 +124,21 @@ public class ExampleActivity extends AppCompatActivity implements View.OnClickLi
         ArrayList<AwesomeExample> result = new ArrayList<>();
         // Find all strings
         Field[] fields = R.string.class.getFields();
-        for(final Field field : fields) {
-
+        for(final Field field : fields)
+        {
             String name = field.getName(); //name of string
             if(name.startsWith("fa_"))
             {
-                try
-                {
+                try {
                     // Add string to list of options
                     int id = field.getInt(R.string.class); //id of string
                     result.add(new AwesomeExample(name, id));
                 }
                 catch (Exception ex) {
-                    Log.e(TAG, "get: Could not get string");
+                    // Error grabbing string
+                    Log.e(TAG, "Could not get string: " + ex.getMessage());
                 }
             }
-
         }
         return result;
     }

@@ -2,4 +2,6 @@
     <string name="app_name">AwesomeExample</string>
     <string name="example_title_iv">ImageView</string>
     <string name="example_title_tv">TextView</string>
+    <string name="example_visitgithub_link">Visit the GitHub page!</string>
+    <string name="example_visitgithub_text">This code is open source!</string>
 </resources>

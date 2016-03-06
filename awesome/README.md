@@ -34,7 +34,7 @@ hoping the original author makes himself known.
 
 How to use
 ----------
-Awesome can be used in XML. You can use a ButtonAwesome or a TextAwesome
+AndroidAwesome can be used in XML. You can use a ButtonAwesome or a TextAwesome
 
 ```
 <nl.rwslinkman.awesome.ButtonAwesome 

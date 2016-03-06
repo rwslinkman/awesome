@@ -113,6 +113,29 @@
             android:shadowDy="0"
             android:shadowRadius="5" />
 
+        <TextView
+            android:id="@+id/example_github_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_awesome_button"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/default_grey"
+            android:textSize="20sp"
+            android:text="@string/example_visitgithub_text"
+            android:gravity="center"/>
+
+        <!-- GitHub link -->
+        <TextView
+            android:id="@+id/example_github_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/example_github_text"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/default_grey"
+            android:textSize="20sp"
+            android:text="@string/example_visitgithub_link"
+            android:gravity="center"/>
+
     </RelativeLayout>
 
 </ScrollView>
