@@ -36,6 +36,10 @@ public class ButtonAwesome extends Button
 
     public void init()
     {
+        if(isInEditMode()) {
+            // Disable in edit mode as it will conflict
+            return;
+        }
         Typeface typeface = sTypefaceCache.get(NAME);
         if (typeface == null)
         {

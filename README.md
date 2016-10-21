@@ -18,7 +18,7 @@ The AndroidAwesome library comes as a Gradle bundle via jcenter.
 
 ```
 dependencies {
-	compile 'nl.rwslinkman.awesome:awesome:1.2'
+	compile 'nl.rwslinkman.awesome:awesome:1.3'
 }
 ```
 
