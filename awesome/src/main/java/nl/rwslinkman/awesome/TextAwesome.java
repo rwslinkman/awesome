@@ -44,6 +44,10 @@ public class TextAwesome extends TextView
 
     public void init()
     {
+        if(isInEditMode()) {
+            // Disable in edit mode as it will conflict
+            return;
+        }
         Typeface typeface = sTypefaceCache.get(NAME);
         if (typeface == null) {
             typeface = Typeface.createFromAsset(getContext().getAssets(), FONT);
